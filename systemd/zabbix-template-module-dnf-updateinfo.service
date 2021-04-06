@@ -1,0 +1,10 @@
+[Unit]
+Description=Send DNF updateinfo to Zabbix
+Wants=zabbix-template-module-dnf-updateinfo.timer
+
+[Service]
+Type=oneshot
+ExecStart=/etc/zabbix/scripts/dnf-updateinfo.sh
+
+[Install]
+WantedBy=multi-user.target
